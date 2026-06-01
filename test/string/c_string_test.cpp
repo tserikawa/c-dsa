@@ -25,3 +25,12 @@ TEST(CStringTest, Cstr)
     EXPECT_STREQ("hello", cs_cstr(s));
     cs_free(s);
 }
+
+TEST(CStringTest, Clear)
+{
+    c_string *s = cs_new("hello");
+    cs_clear(s);
+    EXPECT_STREQ("", cs_cstr(s));
+    EXPECT_EQ(0, cs_length(s));
+    cs_free(s);
+}

@@ -39,3 +39,9 @@ const char *cs_cstr(const c_string *s)
 {
     return s->buffer;
 }
+
+void cs_clear(c_string *s)
+{
+    s->buffer[0] = '\0';
+    s->length = 0;
+}
