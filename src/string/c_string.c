@@ -29,3 +29,8 @@ void cs_free(c_string *s)
     free(s->buffer);
     free(s);
 }
+
+size_t cs_length(const c_string *s)
+{
+    return s->length;
+}

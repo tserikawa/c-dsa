@@ -10,3 +10,10 @@ TEST(CStringTest, Create)
     EXPECT_NE(s, nullptr);
     cs_free(s);
 }
+
+TEST(CStringTest, Length)
+{
+    c_string *s = cs_new("hello");
+    EXPECT_EQ(5, cs_length(s));
+    cs_free(s);
+}
