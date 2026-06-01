@@ -34,3 +34,8 @@ size_t cs_length(const c_string *s)
 {
     return s->length;
 }
+
+const char *cs_cstr(const c_string *s)
+{
+    return s->buffer;
+}
