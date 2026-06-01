@@ -1,55 +1,63 @@
-# Prerequisites
-*.d
+# =====================================
+# CMake ビルド関連
+# =====================================
+build/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+DartConfiguration.tcl
+compile_commands.json
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# CMake GUI / IDE 設定
+CMakeUserPresets.json
+CMakePresets.json # プロジェクト固有で無視したい場合
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
+# =====================================
+# C言語 ビルド関連
+# =====================================
+# 実行ファイル
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.exe
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# オブジェクトファイル
+*.o
+*.obj
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# 静的・動的ライブラリ
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
 
-# debug information files
-*.dwo
+# デバッグ・テスト成果物
+*.gcov
+*.gcda
+*.gcno
+*.log
+ Testing/
+
+# =====================================
+# OS / エディタ一時ファイル
+# =====================================
+# macOS
+.DS_Store
+._*
+.AppleDouble
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~
+*.swp
+*.swo
+
+# IDE / エディタ
+.idea/
+*.sublime-project
+*.sublime-workspace
