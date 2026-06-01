@@ -1,12 +1,12 @@
 **基本操作**
 - [x] `c_string* cs_create(const char* initial)` - 文字列を受け取りc_stringを生成して返す
 - [x] `void cs_free(c_string* s)` - メモリを解放する
-- [ ] `size_t cs_length(const c_string* s)` - 文字列の長さを返す
-- [ ] `const char* cs_cstr(const c_string* s)` - 内部バッファのポインタを返す
-- [ ] `void cs_clear(c_string* s)` - 内容を空にする（メモリは保持）
+- [x] `size_t cs_length(const c_string* s)` - 文字列の長さを返す
+- [x] `const char* cs_cstr(const c_string* s)` - 内部バッファのポインタを返す
+- [x] `void cs_clear(c_string* s)` - 内容を空にする（メモリは保持）
 
 **追加・結合**
-- [ ] `void cs_append(c_string* s, const char* suffix)` - 末尾に文字列を追加する
+- [x] `void cs_append(c_string* s, const char* suffix)` - 末尾に文字列を追加する
 - [ ] `void cs_prepend(c_string* s, const char* prefix)` - 先頭に文字列を追加する
 - [ ] `void cs_insert(c_string* s, size_t pos, const char* text)` - 指定位置に文字列を挿入する
 

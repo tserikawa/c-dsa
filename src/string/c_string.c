@@ -45,3 +45,19 @@ void cs_clear(c_string *s)
     s->buffer[0] = '\0';
     s->length = 0;
 }
+
+void cs_append(c_string *s, const char *suffix)
+{
+    size_t new_length = s->length + strlen(suffix);
+
+    // bufferを再割り当てる。
+    s->buffer = realloc(s->buffer, new_length);
+
+    // 後ろに文字列を追加する。
+    for (int i = 0; i < strlen(suffix); i++)
+    {
+        s->buffer[i + s->length] = suffix[i];
+    }
+
+    s->length = new_length;
+}

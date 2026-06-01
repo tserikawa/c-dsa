@@ -34,3 +34,12 @@ TEST(CStringTest, Clear)
     EXPECT_EQ(0, cs_length(s));
     cs_free(s);
 }
+
+TEST(CStringTest, Append)
+{
+    c_string *s = cs_new("hello");
+    cs_append(s, ",world!");
+    EXPECT_EQ(12, cs_length(s));
+    EXPECT_STREQ("hello,world!", cs_cstr(s));
+    cs_free(s);
+}
