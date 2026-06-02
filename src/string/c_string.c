@@ -1,6 +1,7 @@
 #include "string/c_string.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 struct c_string
 {
@@ -57,6 +58,31 @@ void cs_append(c_string *s, const char *suffix)
     for (int i = 0; i < strlen(suffix); i++)
     {
         s->buffer[i + s->length] = suffix[i];
+    }
+
+    s->length = new_length;
+}
+
+void cs_prepend(c_string *s, const char *prefix)
+{
+    size_t len_prefix = strlen(prefix);
+    size_t new_length = s->length + len_prefix;
+
+    // bufferを再割り当て
+    s->buffer = realloc(s->buffer, new_length);
+
+    // ずらす
+    // for (size_t i = (s->length - 1); i >= 0; i--)
+    // とするとsize_tがオーバーフローを起こして無限ループになる。
+    for (int i = (s->length - 1); i >= 0; i--)
+    {
+        s->buffer[i + len_prefix] = s->buffer[i];
+    }
+
+    // 接頭語
+    for (size_t i = 0; i < len_prefix; i++)
+    {
+        s->buffer[i] = prefix[i];
     }
 
     s->length = new_length;

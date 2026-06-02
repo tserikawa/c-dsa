@@ -7,7 +7,7 @@
 
 **追加・結合**
 - [x] `void cs_append(c_string* s, const char* suffix)` - 末尾に文字列を追加する
-- [ ] `void cs_prepend(c_string* s, const char* prefix)` - 先頭に文字列を追加する
+- [x] `void cs_prepend(c_string* s, const char* prefix)` - 先頭に文字列を追加する
 - [ ] `void cs_insert(c_string* s, size_t pos, const char* text)` - 指定位置に文字列を挿入する
 
 **検索・比較**
